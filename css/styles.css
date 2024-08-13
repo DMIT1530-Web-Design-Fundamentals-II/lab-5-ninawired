@@ -26,30 +26,324 @@ body {
     left: -9999px;
 }
 
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+    line-height: 2rem;
+}
+
+.nav-menu {
+    display: flex;
+}
+
 /* Typography */
 
 h1 {
     font-family: 'Hurricane', cursive;
+    color: var(--white);
+    font-size: 3rem;
+}
+
+p {
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.hero h2 {
+    font-size: 4rem;
+    color: var(--white);
+    font-weight: 100;
+}
+
+.hero .inner-container p {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 300;
 }
 
 
 /* Header */
 
+header {
+    background-color: var(--pop);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 1rem;
+}
+
+.logo p {
+    text-transform: uppercase;
+}
+
+.menu-icon {
+    display: flex;
+}
+
+svg {
+    max-width: 2rem;
+}
+
+nav {
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    width: 70%;
+}
+
+button {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    color: var(--white);
+}
+
+button:first-child {
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+    color: var(--dark);
+}
+
+button:first-child:hover {
+    background-color: var(--hover);
+    color: var(--dark);
+    border: 1px solid var(--hover);
+    border-radius: 3px;
+}
+
 
 /* Hero Banner */
+
+section.hero {
+    background: url('../img/hero.webp') center / cover no-repeat;
+}
+
+.hero .inner-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    height: 100vh;
+    justify-content: center;
+}
+
+.hero h2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    line-height: 3.5rem;
+}
+
+.hero h2 span {
+    padding-right: 5rem;
+    padding-left: 3rem;
+}
+
+.hero p {
+    padding-right: 5rem;
+    padding-left: 1rem;
+}
+
+.hero a {
+    background-color: var(--accent);
+    width: 10rem;
+    align-self: center;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: lowercase;
+    color: var(--dark);
+}
 
 
 /* Parallax */
 
+section.parallax {
+    background: url('../img/splash-mobile.webp') center / cover no-repeat fixed;   
+}
 
+.code-snippet {
+    position: relative;
+    z-index: 1;
+}
+
+.code-snippet::before,
+.code-snippet::after {
+    background-color: var(--hover);
+    content: "";
+    display: block;
+    height: 1.5rem;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+
+.parallax .inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 1rem 0 45%;
+}
+
+.parallax h2 {
+    font-weight: 300;
+}
+
+
+.parallax p {
+    color: var(--dark)
+}
 
 /* Horizontal Scroll */
 
+.horizontal-scroll {
+    padding: 3rem 0 1rem 0;
+}
 
+.horizontal-scroll h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    line-height: 3rem;
+    padding: 2rem 0;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 3px 3px 3px #eee;
+    flex: 0 0 90%;
+    margin: 2rem 1rem;
+    position: relative;
+    padding: 1rem;
+}
+
+.card-body {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.card-body h2 {
+    font-size: 1.5rem;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+.card-body p {
+    color: var(--dark);
+}
+
+.category {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.description {
+    text-align: left;
+}
+
+.scroll-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 5rem;
+    overflow-x: scroll;
+}
+
+.card img {
+    border-radius: 0.2rem 0.2rem 0 0;
+}
+
+
+.card button {
+    background-color: var(--accent);
+    color: var(--dark);
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    width: calc(100% - 2rem);
+}
+
+
+/* This is for webkit browsers only */
+.scroll-wrapper::-webkit-scrollbar {
+    background-color: #eee;
+    width: 0.5rem;
+}
+
+.scroll-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background-color: var(--accent);
+}
+
+/* As of 2022, this is for Firefox only */
+
+.scroll-wrapper {
+    scrollbar-color: var(--accent) transparent;
+    scrollbar-width: thin;
+}
 
 /* Footer */
 
+footer {
+    background-color: var(--pop);
+    padding: 2rem;
+}
 
+.sign-up {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sign-up h3 {
+    color: var(--white)
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column ul {
+    padding: 0;
+    line-height: 2rem;
+}
+
+.nav-links ul li a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.disclaimer {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+
+/* Media Queries */
 
 @media screen and (min-width: 50rem) {
 
