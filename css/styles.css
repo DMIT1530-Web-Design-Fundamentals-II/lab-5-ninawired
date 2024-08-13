@@ -98,7 +98,7 @@ nav {
 
 .buttons {
     display: flex;
-    width: 70%;
+    width: 15rem;
 }
 
 button {
@@ -166,6 +166,10 @@ section.hero {
     color: var(--dark);
 }
 
+.hero a:hover {
+    background-color: var(--hover);
+}
+
 
 /* Parallax */
 
@@ -180,7 +184,7 @@ section.parallax {
 
 .code-snippet::before,
 .code-snippet::after {
-    background-color: var(--hover);
+    background-color: var(--accent);
     content: "";
     display: block;
     height: 1.5rem;
@@ -188,6 +192,14 @@ section.parallax {
     position: absolute;
     right: 0;
     z-index: -1;
+}
+
+.code-snippet::before {
+    filter: brightness(85%);
+}
+
+.code-snippet::after {
+    filter: brightness(105%);
 }
 
 .parallax .inner-container {
@@ -237,13 +249,14 @@ section.parallax {
 }
 
 .card-body h2 {
-    font-size: 1.5rem;
+    font-size: 2.25rem;
     padding: 0;
     text-align: center;
     position: relative;
     display: flex;
     flex-direction: column;
     padding-bottom: 1rem;
+    text-transform: lowercase;
 }
 
 .card-body p {
@@ -253,6 +266,8 @@ section.parallax {
 .category {
     text-transform: uppercase;
     text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.25rem;
 }
 
 .description {
@@ -270,7 +285,6 @@ section.parallax {
     border-radius: 0.2rem 0.2rem 0 0;
 }
 
-
 .card button {
     background-color: var(--accent);
     color: var(--dark);
@@ -280,6 +294,9 @@ section.parallax {
     width: calc(100% - 2rem);
 }
 
+.card button:hover {
+    background-color: var(--hover);
+}
 
 /* This is for webkit browsers only */
 .scroll-wrapper::-webkit-scrollbar {
@@ -316,6 +333,29 @@ footer {
     color: var(--white)
 }
 
+.signup-form {
+    display: flex;
+    max-width: 100%;
+    margin: 1rem 0;
+}
+
+.signup-form input {
+    flex: 1 1 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--accent);
+}
+
+.signup-form button {
+    flex: 0 0 25%;
+    background-color: var(--accent);
+    color: var(--dark);
+    border: 0;
+}
+
+.signup-form button:hover {
+    background-color: var(--hover);
+}
+
 .nav-links {
     display: flex;
     flex-direction: column;
@@ -347,4 +387,75 @@ footer {
 
 @media screen and (min-width: 50rem) {
 
+    .inner-container {
+        max-width: 50rem;
+    }
+
+    .hero {
+        text-align: center;
+    }
+    
+    .hero .inner-container {
+        width: 60vw;
+    }
+
+    .hero h2 span {
+        padding: 0;
+        margin-right: -5rem;
+    }
+    
+    .hero p {
+        padding: 0;
+        text-align: left;
+        max-width: 30rem;
+        align-self: center;
+    }
+
+    .hero .inner-container p {
+        font-weight: 300;
+    }
+
+    .parallax .inner-container {
+        padding: 10rem 10rem 10rem 5rem;
+    }
+
+    .code-snippet::before,
+    .code-snippet::after {
+        visibility: hidden;
+    }
+
+    .card {
+        flex: 0 0 20%;
+    }
+
+    .sign-up {
+        flex-direction: row;
+        margin: 0 auto;
+        gap: 3rem;
+    }
+
+    .nav-links {
+        padding: 2rem 0;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 50rem;
+        margin: 0 auto;
+    }
+    
+    .nav-links ul li a {
+        color: var(--white);
+        text-decoration: none;
+    }
+
+    .column ul {
+        padding: 0;
+        line-height: 2rem;
+    }
+    
+    .disclaimer {
+        text-align: center;
+        padding: 2rem 0;
+        max-width: 60rem;
+        margin: 0 auto;
+    }
 }
